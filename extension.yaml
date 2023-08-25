@@ -1,4 +1,4 @@
-name: web3authio
+name: web3authextensions
 version: 1.0.0 # Follow semver versioning
 specVersion: v1beta # Version of the Firebase Extensions specification
 
@@ -18,9 +18,9 @@ sourceUrl: https://github.com/Web3Auth/web3auth-firebase-extension
 
 billingRequired: true
 
-# roles:
-#   - role: firebasedatabase.admin
-#     reason: Allows the extension to create (user) data to Realtime Database.
+roles:
+  - role: firebasedatabase.admin
+    reason: Allows the extension to create (user) data to Realtime Database.
 
 resources:
   - name: generateWalletAddress
