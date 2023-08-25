@@ -1,5 +1,5 @@
 {
-  "name": "functions",
+  "name": "web3authio",
   "scripts": {
     "prepare": "npm run build",
     "lint": "eslint --ext .js,.ts .",
