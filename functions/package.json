@@ -1,5 +1,5 @@
 {
-  "name": "web3authio",
+  "name": "web3-wallet-generator",
   "scripts": {
     "prepare": "npm run build",
     "lint": "eslint --ext .js,.ts .",

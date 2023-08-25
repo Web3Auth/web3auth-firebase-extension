@@ -1,5 +1,5 @@
-name: web3authextensions
-version: 1.0.0 # Follow semver versioning
+name: web3-wallet-generator # Name of the extension
+version: 1.0.1 # Follow semver versioning
 specVersion: v1beta # Version of the Firebase Extensions specification
 
 displayName: Generate Ethereum Wallet Address using Web3Auth
