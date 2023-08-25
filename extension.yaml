@@ -1,0 +1,117 @@
+name: web3authextensions
+version: 1.0.0 # Follow semver versioning
+specVersion: v1beta # Version of the Firebase Extensions specification
+
+displayName: Generate Ethereum Wallet Address using Web3Auth
+description: Generate Ethereum Wallet Address with Web3Auth using it's MPC based Key Management System (KMS) and store it in Firebase Realtime Database.
+icon: icon.png # Path to extension's icon
+tags: [utilities]
+
+license: Apache-2.0 # https://spdx.org/licenses/
+
+author:
+  authorName: Web3Auth
+  email: hello@web3auth.io
+  url: https://web3auth.io
+
+sourceUrl: https://github.com/Web3Auth/web3auth-firebase-extension
+
+billingRequired: true
+
+roles:
+  - role: firebasedatabase.admin
+    reason: Allows the extension to create (user) data to Realtime Database.
+
+resources:
+  - name: generateWalletAddress
+    type: firebaseextensions.v1beta.function
+    properties:
+      location: ${LOCATION}
+      eventTrigger:
+        eventType: providers/firebase.auth/eventTypes/user.create
+        resource: projects/${PROJECT_ID}
+      runtime: nodejs18
+
+params:
+  - param: LOCATION
+    label: Cloud Functions location
+    description: >-
+      Where do you want to deploy the functions created for this extension?
+      For help selecting a location, refer to the [location selection
+      guide](https://firebase.google.com/docs/functions/locations).
+    type: select
+    options:
+      - label: us-central1 (Iowa)
+        value: us-central1
+      - label: us-east1 (South Carolina)
+        value: us-east1
+      - label: us-east4 (Northern Virginia)
+        value: us-east4
+      - label: us-west2 (Los Angeles)
+        value: us-west2
+      - label: us-west3 (Salt Lake City)
+        value: us-west3
+      - label: us-west4 (Las Vegas)
+        value: us-west4
+      - label: asia-east2 (Hong Kong)
+        value: asia-east2
+      - label: asia-northeast1 (Tokyo)
+        value: asia-northeast1
+      - label: asia-northeast2 (Osaka)
+        value: asia-northeast2
+      - label: asia-northeast3 (Seoul)
+        value: asia-northeast3
+      - label: asia-south1 (Mumbai)
+        value: asia-south1
+      - label: asia-southeast2 (Jakarta)
+        value: asia-southeast2
+      - label: australia-southeast1 (Sydney)
+        value: australia-southeast1
+      - label: europe-central2 (Warsaw)
+        value: europe-central2
+      - label: europe-west1 (Belgium)
+        value: europe-west1
+      - label: europe-west2 (London)
+        value: europe-west2
+      - label: europe-west3 (Frankfurt)
+        value: europe-west3
+      - label: europe-west6 (Zurich)
+        value: europe-west6
+      - label: northamerica-northeast1 (Montreal)
+        value: northamerica-northeast1
+      - label: southamerica-east1 (Sao Paulo)
+        value: southamerica-east1
+    default: us-central1
+    required: true
+    immutable: true
+  - param: WEB3AUTH_CLIENT_ID
+    label: Client ID from Web3Auth Dashboard
+    description: What is your Client ID?
+    type: string
+    required: true
+  - param: WEB3AUTH_NETWORK
+    label: Web3Auth Network
+    description: What is your Web3Auth Network?
+    type: string
+    required: true
+  - param: WEB3AUTH_VERIFIER_NAME
+    label: Verifier Name created on Web3Auth Dashboard
+    description: What is your Verifier name?
+    type: string
+    required: true
+  - param: RTDB_INSTANCE
+    label: Realtime Database Instance
+    description: What is your Realtime Database Instance?
+    type: string
+    example: my-instance
+    validationRegex: ^([0-9a-z_.-]*)$
+    validationErrorMessage: Invalid database instance
+    required: true
+  - param: RTDB_PATH
+    label: Realtime Database Path
+    description: What is your Realtime Database Path?
+    type: string
+    example: users
+    validationRegex: ^([0-9a-z_/]*)$
+    validationErrorMessage: Invalid database path
+    required: false
