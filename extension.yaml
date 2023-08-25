@@ -1,4 +1,4 @@
-name: web3auth-147be
+name: web3-wallet-generator # Name of the extension
 version: 1.0.0 # Follow semver versioning
 specVersion: v1beta # Version of the Firebase Extensions specification
 
