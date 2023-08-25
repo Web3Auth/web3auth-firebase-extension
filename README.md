@@ -117,9 +117,5 @@ npm install -g firebase-tools
 git clone https://github.com/Web3Auth/web3auth-firebase-extension
 cd functions
 npm install
-npm run build:watch
-
-# Open another terminal
-cd functions/integration-tests
-firebase emulators:start --project=demo-test
+npm run build
 ```
