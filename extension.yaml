@@ -1,5 +1,5 @@
 name: web3-wallet-generator # Name of the extension
-version: 1.0.1 # Follow semver versioning
+version: 1.0.2 # Follow semver versioning
 specVersion: v1beta # Version of the Firebase Extensions specification
 
 displayName: Generate Ethereum Wallet Address using Web3Auth
@@ -17,6 +17,10 @@ author:
 sourceUrl: https://github.com/Web3Auth/web3auth-firebase-extension
 
 billingRequired: true
+
+externalServices:
+  - name: Web3Auth
+    pricingUri: https://web3auth.io/pricing
 
 roles:
   - role: firebasedatabase.admin
