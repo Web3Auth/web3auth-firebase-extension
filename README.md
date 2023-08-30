@@ -14,7 +14,7 @@ To install and manage extensions, you can use the Firebase console.
 
 [![Install using console](https://www.gstatic.com/mobilesdk/210513_mobilesdk/install-extension.png "Install using console")][install-link]
 
-[install-link]: https://console.firebase.google.com/project/_/extensions/install?ref=web3auth/web3-wallet-generator@1.0.1
+[install-link]: https://console.firebase.google.com/project/_/extensions/install?ref=web3auth/web3-wallet-generator@1.0.2
 
 ### Using the Firebase CLI
 

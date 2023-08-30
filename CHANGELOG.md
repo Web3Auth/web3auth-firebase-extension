@@ -1,3 +1,7 @@
+## Version 1.0.2
+
+Add missing `externalServices` in `extension.yaml`
+
 ## Version 1.0.1
 
 - `web3-wallet-generator` as extension name
