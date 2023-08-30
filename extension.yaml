@@ -18,6 +18,10 @@ sourceUrl: https://github.com/Web3Auth/web3auth-firebase-extension
 
 billingRequired: true
 
+externalServices:
+  - name: Web3Auth
+    pricingUri: https://web3auth.io/pricing
+
 roles:
   - role: firebasedatabase.admin
     reason: Allows the extension to create (user) data to Realtime Database.
